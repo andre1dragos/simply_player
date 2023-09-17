@@ -1,0 +1,424 @@
+:root {
+  --main-color: #d9d9d9;
+  --secondary-color: #404040;
+  --auxiliary-color: #1e1e1e;
+  --grey-color: #bbb;
+}
+
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+}
+
+/* animations */
+@keyframes lines {
+  0% {
+    width: 0.5rem;
+    opacity: 0.2;
+  }
+  50% {
+    width: 1rem;
+    opacity: 0.5;
+  }
+  100% {
+    width: 2.5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* reusable classes */
+.fa-play.hide,
+.fa-pause.hide {
+  display: none;
+}
+
+.fa-play.show,
+.fa-pause.show {
+  display: block;
+}
+
+.sound-wave {
+  animation: 1s lines linear forwards infinite;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+}
+
+.rotate360 {
+  animation: 2s rotate linear forwards infinite;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--auxiliary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* earbuds */
+.earbuds-container {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.earbuds {
+  width: 13rem;
+  filter: drop-shadow(5px 5px 10px var(--secondary-color));
+}
+
+.left-noise,
+.right-noise {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.left-noise {
+  position: absolute;
+  top: 13%;
+  right: 13.5rem;
+}
+
+.right-noise {
+  position: absolute;
+  top: 13%;
+  left: 13.5rem;
+}
+
+.left-noise .top,
+.left-noise .middle,
+.left-noise .bottom,
+.right-noise .top,
+.right-noise .middle,
+.right-noise .bottom {
+  width: 0;
+  height: 0.2rem;
+  background: var(--main-color);
+  border-radius: 2rem;
+  /* transition: 0.3s all ease-in-out; */
+}
+
+.left-noise .top,
+.left-noise .middle,
+.left-noise .bottom {
+  margin-left: auto;
+}
+
+.left-noise .top,
+.right-noise .top {
+  animation-delay: 1s;
+}
+
+.left-noise .middle,
+.right-noise .middle {
+  animation-delay: 0.5s;
+}
+
+.left-noise .bottom,
+.right-noise .bottom {
+  animation-delay: 1.8s;
+}
+
+/* case */
+.case {
+  width: 35rem;
+  height: 50rem;
+  padding: 2rem;
+  background: var(--main-color);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 10px var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* playlist */
+.playlist-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  background: var(--main-color);
+  border-radius: 2rem;
+  z-index: 10;
+  transform-origin: bottom left;
+  transition: 1s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.playlist-title {
+  font-family: 'Audiowide', cursive;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+}
+
+.fa-rotate-left {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+}
+
+.fa-rotate-left:hover {
+  color: var(--auxiliary-color);
+}
+
+.song {
+  margin-bottom: 0.5rem;
+  padding-right: 0.5rem;
+  border-bottom: 1px solid var(--grey-color);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.song.active,
+.song:hover {
+  background: linear-gradient(90deg, #ecf0f11f, #ecf0f1);
+}
+
+.song.active .fa-play,
+.song.active .fa-pause,
+.song.active:hover .fa-play,
+.song.active:hover .fa-pause {
+  color: #404040;
+}
+
+.song.active .play-container:hover {
+  background: none;
+}
+
+.song-id {
+  width: 3.5rem;
+  background: rgba(64, 64, 64, 0.7);
+  padding: 1rem;
+  border-radius: 2rem 0 0 2rem;
+  font-size: 1.2rem;
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-title {
+  margin-right: auto;
+}
+
+.song-title .fa-itunes-note {
+  margin-right: 0.5rem;
+}
+
+.play-container {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--grey-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s all ease-in-out;
+}
+
+.play-container .fa-play,
+.play-container .fa-pause,
+.song .fa-play,
+.song .fa-pause {
+  padding: 1rem;
+  color: var(--grey-color);
+  transition: 0.3s all ease-in-out;
+}
+
+.play-container:hover,
+.play-container .fa-play.active,
+.play-container .fa-pause.active {
+  background: var(--secondary-color);
+}
+
+.play-container:hover .fa-play,
+.play-container:hover .fa-pause {
+  color: var(--main-color);
+}
+
+/* controls */
+.controls {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem;
+}
+
+.control {
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color);
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  color: var(--main-color);
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.play-pause-btn {
+  width: 10rem;
+  height: 10rem;
+  display: grid;
+  place-content: center;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  border: 3px solid var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+}
+
+.play-pause-btn .fa-play,
+.play-pause-btn .fa-pause {
+  padding: 3rem;
+  font-size: 2.7rem;
+  color: var(--main-color);
+}
+
+.control:hover,
+.play-pause-btn:hover {
+  background: var(--auxiliary-color);
+}
+
+/* display */
+.display {
+  width: 25rem;
+  padding: 1rem;
+  border: 1px solid rgba(64, 64, 64, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: inset 1px 1px 10px rgba(64, 64, 64, 0.3),
+    inset -1px -1px 10px rgba(64, 64, 64, 0.3);
+}
+
+.song-container {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--grey-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description .song-id {
+  background: none;
+  border: 1px solid rgba(64, 64, 64, 0.4);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.logo {
+  font-family: 'Audiowide', cursive;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+}
+
+.song-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.song-container .fa-itunes-note {
+  font-size: 1.2rem;
+}
+
+.song-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.album-cover {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid rgba(64, 64, 64, 0.3);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sound-wave-container {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--grey-color);
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.genre {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.genre span {
+  font-weight: 400;
+  font-style: italic;
+}

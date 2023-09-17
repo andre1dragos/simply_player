@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simply Player</title>
+
+    <!-- link style sheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- link google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:ital,wght@0,300;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link to wavesurfer.js -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+  </head>
+  <body>
+    <!-- earbuds container -->
+    <div class="earbuds-container">
+      <div class="left-noise">
+        <div class="top noise"></div>
+        <div class="middle noise"></div>
+        <div class="bottom noise"></div>
+      </div>
+      <img src="media/earphones.png" alt="earphones" class="earbuds" />
+      <div class="right-noise">
+        <div class="top noise"></div>
+        <div class="middle noise"></div>
+        <div class="bottom noise"></div>
+      </div>
+    </div>
+
+    <!-- case -->
+    <div class="case">
+      <!-- playlist -->
+      <div id="playlist-container" class="playlist-container rotate">
+        <div class="playlist-header">
+          <i id="rotate-icon" class="fa-solid fa-rotate-left"></i>
+          <h2 class="playlist-title">Playlist</h2>
+        </div>
+        <!-- display the playlist here with javascript -->
+      </div>
+
+      <!-- controls -->
+      <div class="controls">
+        <button id="playlist" class="control playlist">
+          <i class="fa-solid fa-music"></i>
+        </button>
+        <button id="stop" class="control stop">
+          <i class="fa-solid fa-stop"></i>
+        </button>
+        <button id="backward" class="control backward">
+          <i class="fa-sharp fa-solid fa-backward"></i>
+        </button>
+        <button id="forward" class="control forward">
+          <i class="fa-sharp fa-solid fa-forward"></i>
+        </button>
+        <button id="play-pause" class="play-pause-btn">
+          <i id="play" class="fa-solid fa-play"></i>
+          <i id="pause" class="fa-solid fa-pause hide"></i>
+        </button>
+      </div>
+
+      <!-- display -->
+      <div class="display">
+        <!-- song info -->
+        <div class="song-container">
+          <div class="description">
+            <p id="song-id" class="song-id">01.</p>
+            <p class="logo">Simply Player</p>
+            <div id="album-cover" class="album-cover">
+              <img
+                src="media/posters/poster01.jpg"
+                alt="poster01"
+                id="cover"
+                class="cover"
+              />
+            </div>
+          </div>
+
+          <div class="song-info">
+            <i class="fa-brands fa-itunes-note"></i>
+            <p id="song-title" class="song-title">Future Sounds - Good vibes</p>
+          </div>
+        </div>
+        <!-- sound-wave -->
+        <div id="waveform" class="sound-wave-container"></div>
+        <!-- genre -->
+        <div class="type">
+          <p id="genre" class="genre">Genre - <span>Techno-trap</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
