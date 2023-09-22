@@ -1,6 +1,4 @@
-# Frontend Mentor - Age calculator app solution
-
-This is a solution to the [](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q).
+This is a simple solution for a music player app. The main purpose was learning to work with Wavesurfer.js library
 
 ## Table of contents
 
@@ -16,6 +14,13 @@ This is a solution to the [](https://www.frontendmentor.io/challenges/age-calcul
 ## Overview
 
 ### The challenge
+
+- Create and display a list with all songs
+- Play/Pause song from main panel and from the list
+- Stop song from main panel
+- Play previous song from main panel
+- Play next song from main panel
+- Display song id, title, poster, soundwave and genre
 
 ### Screenshot
 
