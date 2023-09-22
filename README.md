@@ -24,7 +24,7 @@ This is a simple solution for a music player app. The main purpose was learning 
 
 ### Screenshot
 
-[screenshot](screenshot.png)
+![screenshot](screenshot.png)
 
 ### Links
 
