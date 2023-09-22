@@ -4,14 +4,14 @@ This is a solution to the [](https://www.frontendmentor.io/challenges/age-calcul
 
 ## Table of contents
 
-- [](#overview)
-  - [](#the-challenge)
-  - [](#screenshot)
-  - [](#links)
-- [](#my-process)
-  - [](#built-with)
-  - [](#what-i-learned)
-- [](#author)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I Learned](#what-i-learned)
+- [Author](#author)
 
 ## Overview
 
