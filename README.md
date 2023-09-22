@@ -49,4 +49,3 @@ This is a simple solution for a music player app. The main purpose was learning 
 ## Author
 
 - GitHub - [Dragos Andrei](https://github.com/andre1dragos)
-- Frontend Mentor - [Dragos Andrei](https://www.frontendmentor.io/profile/andre1dragos)
