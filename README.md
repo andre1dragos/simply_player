@@ -17,6 +17,7 @@ This is a simple solution for a music player app. The main purpose was learning 
 
 - Create and display a list with all songs from the Keynote button
 - Play/Pause song from main panel and from the list
+- Animate the earphones and the poster only when playing
 - Stop song from main panel
 - Play previous song from main panel
 - Play next song from main panel
