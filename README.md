@@ -15,12 +15,12 @@ This is a simple solution for a music player app. The main purpose was learning 
 
 ### The challenge
 
-- Create and display a list with all songs
+- Create and display a list with all songs from the Keynote button
 - Play/Pause song from main panel and from the list
 - Stop song from main panel
 - Play previous song from main panel
 - Play next song from main panel
-- Display song id, title, poster, soundwave and genre
+- Display song id, title, poster, soundwave and genre on main panel
 
 ### Screenshot
 
